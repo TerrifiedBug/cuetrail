@@ -1,13 +1,33 @@
 #movie_player .cuetrail {
   position: absolute;
-  top: 52px;
-  left: 12px;
+  bottom: 72px;
+  right: 12px;
   z-index: 62;
   max-width: min(420px, calc(100% - 24px));
+  max-height: calc(100% - 96px);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 7px;
   color: #fff;
   font: 500 13px/1.4 Arial, sans-serif;
   text-align: left;
   pointer-events: none;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 180ms ease, visibility 0s linear;
+}
+
+#movie_player.ytp-autohide .cuetrail:not(:focus-within):not(:has(.cuetrail-chooser:not([hidden]))):not(:has(.cuetrail-status:not([hidden]))) {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 180ms ease, visibility 0s linear 180ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #movie_player .cuetrail {
+    transition: none !important;
+  }
 }
 
 #movie_player .cuetrail [hidden],
@@ -50,6 +70,7 @@
 
 #movie_player .cuetrail-control {
   display: block;
+  flex: 0 0 auto;
   max-width: 100%;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -59,7 +80,9 @@
 
 #movie_player .cuetrail-chooser {
   box-sizing: border-box;
-  margin-top: 7px;
+  order: -1;
+  flex: 0 1 auto;
+  min-height: 0;
   padding: 11px;
   width: 390px;
   max-width: 100%;
@@ -93,9 +116,11 @@
 
 #movie_player .cuetrail-status {
   box-sizing: border-box;
+  order: -2;
+  flex: 0 0 auto;
   width: fit-content;
   max-width: 100%;
-  margin-top: 7px;
+  margin: 0;
   border-radius: 7px;
   padding: 9px 11px;
   background: rgba(20, 20, 24, 0.97);
@@ -105,19 +130,23 @@
 
 #movie_player.ytp-fullscreen .cuetrail,
 #movie_player:fullscreen .cuetrail {
-  top: 64px;
-  left: 20px;
+  bottom: 90px;
+  right: 20px;
   max-width: min(480px, calc(100% - 40px));
+  max-height: calc(100% - 114px);
   font-size: 15px;
 }
 
-#movie_player.ytp-small-mode .cuetrail {
-  top: 38px;
-  left: 8px;
+#movie_player.ytp-small-mode .cuetrail,
+#movie_player.ytp-xsmall-width-mode .cuetrail {
+  bottom: 64px;
+  right: 8px;
   max-width: calc(100% - 16px);
+  max-height: calc(100% - 80px);
   font-size: 12px;
 }
 
-#movie_player.ytp-small-mode .cuetrail-chooser {
+#movie_player.ytp-small-mode .cuetrail-chooser,
+#movie_player.ytp-xsmall-width-mode .cuetrail-chooser {
   max-height: 140px;
 }

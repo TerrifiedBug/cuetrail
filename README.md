@@ -20,9 +20,11 @@ There's nothing to install with npm and no build step.
 
 ## Try it
 
-Open [this GitHub Trending video](https://www.youtube.com/watch?v=yn2abf29vAw) and jump to **2:30**. You should see "Open math ↗" near the top-left of the player. Clicking it opens `https://github.com/openai/math`.
+Open [this GitHub Trending video](https://www.youtube.com/watch?v=yn2abf29vAw) and jump to **2:30**. You should see "Open math ↗" near the bottom-right of the player, just above the playback controls. Clicking it opens `https://github.com/openai/math`.
 
 At **2:46**, the button changes to "Open open-instinct ↗". You don't have to land on the exact timestamp: each section lasts until the next timestamp.
+
+Move your mouse over the player to bring up the button along with YouTube's controls. It fades when those controls disappear. Keyboard focus keeps it visible, and the link list stays open even after you move the mouse away. Status messages stay visible long enough to read.
 
 The introduction has no link, so there's no button there. CueTrail hides during ads and doesn't open anything by itself.
 
