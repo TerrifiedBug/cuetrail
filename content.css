@@ -1,0 +1,123 @@
+#movie_player .cuetrail {
+  position: absolute;
+  top: 52px;
+  left: 12px;
+  z-index: 62;
+  max-width: min(420px, calc(100% - 24px));
+  color: #fff;
+  font: 500 13px/1.4 Arial, sans-serif;
+  text-align: left;
+  pointer-events: none;
+}
+
+#movie_player .cuetrail [hidden],
+#movie_player .cuetrail[hidden] {
+  display: none !important;
+}
+
+#movie_player .cuetrail button,
+#movie_player .cuetrail-chooser,
+#movie_player .cuetrail-status {
+  pointer-events: auto;
+}
+
+#movie_player .cuetrail button {
+  box-sizing: border-box;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 7px;
+  padding: 8px 11px;
+  color: #fff;
+  background: rgba(20, 20, 24, 0.94);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+#movie_player .cuetrail button:hover {
+  border-color: #fff;
+  background: #303037;
+}
+
+#movie_player .cuetrail button:focus-visible {
+  outline: 3px solid #8cc8ff;
+  outline-offset: 2px;
+}
+
+#movie_player .cuetrail button:disabled {
+  opacity: 0.65;
+  cursor: wait;
+}
+
+#movie_player .cuetrail-control {
+  display: block;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  box-shadow: 0 2px 9px rgba(0, 0, 0, 0.35);
+}
+
+#movie_player .cuetrail-chooser {
+  box-sizing: border-box;
+  margin-top: 7px;
+  padding: 11px;
+  width: 390px;
+  max-width: 100%;
+  max-height: min(360px, calc(100vh - 130px));
+  overflow: auto;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 9px;
+  background: rgba(20, 20, 24, 0.98);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.5);
+}
+
+#movie_player .cuetrail-chooser-title {
+  margin: 0 0 8px;
+  overflow-wrap: anywhere;
+  font-weight: 700;
+}
+
+#movie_player .cuetrail-links {
+  display: grid;
+  gap: 7px;
+}
+
+#movie_player .cuetrail-link {
+  width: 100%;
+  overflow-wrap: anywhere;
+}
+
+#movie_player .cuetrail-close {
+  margin-top: 10px;
+}
+
+#movie_player .cuetrail-status {
+  box-sizing: border-box;
+  width: fit-content;
+  max-width: 100%;
+  margin-top: 7px;
+  border-radius: 7px;
+  padding: 9px 11px;
+  background: rgba(20, 20, 24, 0.97);
+  box-shadow: 0 2px 9px rgba(0, 0, 0, 0.35);
+  overflow-wrap: anywhere;
+}
+
+#movie_player.ytp-fullscreen .cuetrail,
+#movie_player:fullscreen .cuetrail {
+  top: 64px;
+  left: 20px;
+  max-width: min(480px, calc(100% - 40px));
+  font-size: 15px;
+}
+
+#movie_player.ytp-small-mode .cuetrail {
+  top: 38px;
+  left: 8px;
+  max-width: calc(100% - 16px);
+  font-size: 12px;
+}
+
+#movie_player.ytp-small-mode .cuetrail-chooser {
+  max-height: 140px;
+}

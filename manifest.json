@@ -1,0 +1,38 @@
+{
+  "manifest_version": 3,
+  "name": "CueTrail",
+  "version": "1.0.0",
+  "description": "Open the description link for the moment you're watching on YouTube.",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "action": {
+    "default_title": "CueTrail: Open the current section's link",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "commands": {
+    "open-current-link": {
+      "suggested_key": {
+        "default": "Alt+Shift+O"
+      },
+      "description": "Open the current YouTube section's description link"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/*"],
+      "js": ["model.js", "content.js"],
+      "css": ["content.css"],
+      "run_at": "document_idle"
+    }
+  ]
+}
